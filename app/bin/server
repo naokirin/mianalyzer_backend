@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#if [ "$JULIA_ENV" != 'production' ]; then
+#  julia --color=yes --depwarn=no -q -i -- deps.jl | tee -a logs/server.log
+#fi
+julia --sysimage /sysimage/sysimage.dylib --color=yes --depwarn=no -q -i -- bootstrap.jl s "$@" | tee -a logs/server.log

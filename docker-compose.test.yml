@@ -1,0 +1,11 @@
+version: '2.2'
+services:
+  backend:
+    container_name: mianalyzer_backend
+    build:
+      context: .
+    ports:
+      - 8000
+    environment:
+      - JULIA_NUM_THREADS=5
+

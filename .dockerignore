@@ -1,0 +1,10 @@
+.DS_store
+.idea
+/log/*
+/logs/*
+!.gitkeep
+!.keep
+
+Dockerfile
+app/logs
+app/sysimage/*

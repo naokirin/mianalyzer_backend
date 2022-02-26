@@ -1,0 +1,14 @@
+version: '2.2'
+services:
+  backend:
+    container_name: mianalyzer_backend
+    build:
+      context: .
+    ports:
+      - 28000:8000
+    volumes:
+      - ./app:/app
+    environment:
+      - JULIA_NUM_THREADS=5
+      - MIANALYZER_TIMEOUT=10.0
+

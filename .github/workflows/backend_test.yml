@@ -1,0 +1,22 @@
+name: BackendTest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  run-backend-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Build docker image
+      run: docker-compose -f docker-compose.test.yml build backend
+
+    - name: Run test
+      run: docker-compose -f docker-compose.test.yml run --rm backend bin/test
+
